@@ -20,6 +20,7 @@ export interface Props {
     description?: string;
   };
   list?: Category[];
+  hiddenImages?: boolean;
   layout?: {
     headerAlignment?: "center" | "left";
     categoryCard?: {
@@ -110,7 +111,7 @@ function CategoryList(props: Props) {
                     alignment={layout?.categoryCard?.textAlignment}
                   />
                 )}
-              {image &&
+              {!props.hiddenImages && image &&
                 (
                   <figure>
                     <Image
